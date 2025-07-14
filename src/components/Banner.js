@@ -3,7 +3,7 @@
 import { useRouter } from 'next/navigation';
 import {useState, useEffect} from "react";
 import Image from "next/image";
-
+import Link from 'next/link';
 export default function Banner({ login }) {
 
     const router = useRouter();
@@ -29,7 +29,7 @@ export default function Banner({ login }) {
     return (
         <nav className="bg-blue-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4 py-4">
-                <a href="/" className="bg-white rounded-md p-2">
+                <Link href="/" className="bg-white rounded-md p-2">
                     <Image
                         src="/images/logo.png"
                         unoptimized
@@ -38,7 +38,7 @@ export default function Banner({ login }) {
                         className="w-[120px] h-[40px] object-cover"
                         alt="Logo PUPR"
                     />
-                </a>
+                </Link>
 
                 {/* Hamburger Button */}
                 {!login && (
@@ -68,20 +68,20 @@ export default function Banner({ login }) {
 
                         {/* Desktop Menu */}
                         <div className="hidden md:flex items-center gap-4">
-                            <a
+                            <Link
                                 href="#"
                                 onClick={handleHowTo}
                                 className="rounded-md px-4 py-2 text-sm font-medium text-gray-300 hover:bg-yellow-500 hover:text-white"
                             >
                                 Cara Melapor
-                            </a>
-                            <a
+                            </Link>
+                            <Link
                                 href="#"
                                 onClick={handleAbout}
                                 className="rounded-md px-4 py-2 text-sm font-medium text-gray-300 hover:bg-yellow-500 hover:text-white"
                             >
                                 Tentang
-                            </a>
+                            </Link>
                             <button
                                 onClick={handleLoginClick}
                                 className="text-white bg-yellow-400 hover:bg-yellow-600 font-bold rounded-md px-6 py-2 text-sm"
@@ -96,20 +96,20 @@ export default function Banner({ login }) {
             {/* Mobile Menu */}
             {menuOpen && (
                 <div className="md:hidden bg-blue-800 px-4 pb-4 space-y-3 transition-all duration-300 ease-in-out">
-                    <a
+                    <Link
                         href="#"
                         onClick={handleHowTo}
                         className="block text-white text-sm py-2 hover:text-yellow-400"
                     >
                         Cara Melapor
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                         href="#"
                         onClick={handleAbout}
                         className="block text-white text-sm py-2 hover:text-yellow-400"
                     >
                         Tentang
-                    </a>
+                    </Link>
                     <button
                         onClick={handleLoginClick}
                         className="w-full bg-yellow-400 hover:bg-yellow-500 text-white font-semibold px-4 py-2 rounded-md"
